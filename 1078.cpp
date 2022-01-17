@@ -11,8 +11,6 @@
  * @copyright Copyright (c) 2021
  * 
  */
-#include <bits/stdc++.h>
-using namespace std;
 class Solution {
 public:
     vector<string> findOcurrences(string text, string first, string second) {
