@@ -22,11 +22,7 @@ public:
         int min_P = prices[0];
         vector<int> dp(n,0);      //存放当前最大利润
         for (int i = 1; i < n; ++i) {
-            if (prices[i] < min_P) {
-                min_P = prices[i];
-                dp[i] = dp[i-1];
-                continue;
-            }
+            min_P = min(min_P,prices[i]);
             dp[i] = max(prices[i] - min_P,dp[i-1]);
         }
         return dp[n-1];
