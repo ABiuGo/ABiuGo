@@ -9,13 +9,12 @@
  * @copyright Copyright (c) 2022
  * 
  */
-
 class Solution {
 public:
     string longestCommonPrefix(vector<string>& strs) {
         int n = strs.size();
         if (n <= 1) return strs[0];
-        string ans = strs[0];
+        string ans = strs[0]; //记录最长字串
         for (int i = 0;i < n; ++i) {
             string temp = "";
             for (int j = 0; j < ans.size(); ++j) {
