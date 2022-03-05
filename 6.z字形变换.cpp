@@ -13,21 +13,20 @@
 class Solution {
 public:
     string convert(string s, int numRows) {
-        int n = s.size();
         if (numRows == 1) return s;
-        int T = 2*(numRows-1);     //周期
-        vector<string> ans(numRows,"");
+        string asc = "";
+        int n = s.size();
+        int T = 2 * (numRows - 1);      //找规律2 * (numRows - 1)为一组
+        vector<string> ans(numRows, "");//存储变形后每一行的字符串
         for (int i = 0; i < n; ++i) {
             if (i % T >= numRows) {
-                ans[T-(i%T)] += s[i];
+                ans[T - (i % T)] += s[i];
             } else {
-                ans[i%T] += s[i];
+                ans[i % T] += s[i];
             }
         }
-        string asc = "";
-        for (string i:ans){
-            asc += i;
-        }
+        for (string i: ans) asc += i;
+        //把每一行拼接起来
         return asc;
     }
 };
